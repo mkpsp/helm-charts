@@ -1,0 +1,20 @@
+apiVersion: v1
+entries:
+  polyapp:
+  - apiVersion: v2
+    appVersion: v1.0.0
+    created: "2024-08-04T22:51:52.920562187Z"
+    description: Polyapp, a versatile chart for deploying various applications to
+      Kubernetes
+    digest: 7b3aa28b8b373f9aae5ebc617c705504055042522ea48ec87e3a0f83ea84c179
+    home: https://www.mkpsp.com
+    keywords:
+    - versatile
+    - generic
+    name: polyapp
+    sources:
+    - https://github.com/mkpsp/helm-charts
+    urls:
+    - https://github.com/mkpsp/helm-charts/releases/download/polyapp-v1.0.0/polyapp-v1.0.0.tgz
+    version: v1.0.0
+generated: "2024-08-04T22:51:52.920572266Z"
