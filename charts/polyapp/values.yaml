@@ -1,0 +1,7 @@
+
+default:
+  slug: ''
+  issuer: default
+  ingress:
+    external: external
+    internal: internal
