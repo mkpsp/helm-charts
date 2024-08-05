@@ -32,15 +32,7 @@
           "type": ["number", "string"]
         },
         "issuer": {
-          "type": "object",
-          "properties": {
-            "production": {
-              "type": "string"
-            },
-            "staging": {
-              "type": "string"
-            }
-          }
+          "type": "string"
         },
         "ingress": {
           "type": "object",
