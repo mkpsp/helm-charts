@@ -274,7 +274,7 @@
           },
           "retries": {
             "type": "number",
-            "minimum": 1
+            "minimum": 0
           },
           "timeout": {
             "type": "number"

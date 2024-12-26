@@ -1,7 +1,7 @@
 apiVersion: v2
 name: polyapp
-version: v1.0.2
-appVersion: v1.0.2
+version: v1.0.3
+appVersion: v1.0.3
 description: Polyapp, a versatile chart for deploying various applications to Kubernetes
 home: https://www.mkpsp.com
 keywords:
