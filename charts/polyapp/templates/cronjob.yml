@@ -111,11 +111,11 @@ spec:
                 memory: {{ coalesce ($cnm.request | default "") "64Mi" }}
               {{- end }}
               limits:
-                {{- if (eq $index 0) }}
-                  memory: {{ coalesce ($cjm.limit | default "") ($cnm.limit | default "") "1Gi" }}
-                {{- else }}
-                  memory: {{ coalesce ($cnm.limit | default "") "1Gi" }}
-                {{- end }}
+              {{- if (eq $index 0) }}
+                memory: {{ coalesce ($cjm.limit | default "") ($cnm.limit | default "") "1Gi" }}
+              {{- else }}
+                memory: {{ coalesce ($cnm.limit | default "") "1Gi" }}
+              {{- end }}
             {{- if $cntr.probe }}{{ if eq $cntr.probe.path "disable" }}{{- end }}
             {{- else }}
             readinessProbe:
