@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "title": "Polyops Schema",
+  "description": "polyops validation",
+  "required": [
+    "default"
+  ],
+  "properties": {
+    "configs": {
+      "type": "array",
+      "required": [
+        "name",
+        "data"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "data": {
+          "type": "object"
+        }
+      }
+    },
+    "default": {
+      "type": "object",
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "rbac": {
+      "type": "array",
+      "required": [
+        "rules"
+      ],
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "rules": {
+          "type": "array"
+        }
+      }
+    },
+    "sa": {
+      "type": "string"
+    },
+    "secrets": {
+      "type": "array",
+      "required": [
+        "name",
+        "data"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "data": {
+          "type": "object"
+        },
+        "type": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

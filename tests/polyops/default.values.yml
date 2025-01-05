@@ -1,0 +1,50 @@
+
+default:
+  name: example
+
+configs:
+- name: env
+  data:
+    ENV: "${TEST_CONFIG}"
+    TOKEN: "xyz"
+
+rbac:
+- rules:
+  - apiGroups: [""]
+    resources: ["pods"]
+    verbs: ["get"]
+- type: cluster
+  rules:
+  - apiGroups: [""]
+    resources: ["pods"]
+    verbs: ["get", "watch", "list"]
+
+secrets:
+- name: env
+  data:
+    ENV: "${TEST_SECRET}"
+    TOKEN: "123"
+
+issuers:
+- name: selfsigned
+  type: cluster
+  selfsigned: enable
+- name: http
+  email: test@example.com
+  ingress: internal
+- name: aws
+  type: cluster
+  email: test@example.com
+  aws:
+    region: us-east-1
+    access_key: abc
+    secret_key: xyz
+
+certs:
+- name: wildcard
+  issuer: 
+    name: aws
+    type: cluster
+  urls:
+  - "*.example.com"
+  - "*.test.example.com"

@@ -1,0 +1,13 @@
+
+###########################################################################
+
+Name: {{ include "name" $ }}
+Namespace: {{ include "ns" $ }}
+
+Chart Version: {{ .Chart.Version }}
+
+To view all resources, run the following command:
+
+  $ helm get manifest {{ .Release.Name }} -n {{ .Release.Namespace }} | kubectl get -f - ;
+
+###########################################################################

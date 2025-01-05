@@ -18,11 +18,11 @@ if [[ -n "$1" ]]; then
   
   trap "rm values.yml; exit 0;" HUP INT QUIT ABRT TERM ERR
 
-  # helm template test ../../charts/polyapp  \
+  # helm template test ../../charts/polyops  \
   #   --namespace helmspace \
   #   --values values.yml --validate --debug
 
-  helm upgrade ${1} ../../charts/polyapp  \
+  helm upgrade ${1} ../../charts/polyops  \
     --namespace helmspace \
     --values values.yml \
     --dry-run --install;
@@ -35,11 +35,11 @@ else
 
     trap "rm values.yml; exit 0;" HUP INT QUIT ABRT TERM ERR
 
-    # helm template test ../../charts/polyapp  \
+    # helm template test ../../charts/polyops  \
     #   --namespace helmspace \
     #   --values values.yml --validate --debug
     
-    helm upgrade ${filename%%.*} ../../charts/polyapp  \
+    helm upgrade ${filename%%.*} ../../charts/polyops  \
       --namespace helmspace \
       --values values.yml \
       --dry-run --install;
