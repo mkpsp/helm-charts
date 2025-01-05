@@ -42,7 +42,7 @@ secrets:
 
 ## Configuration
 
-- [configs](../docs/configs.md)
-- [rbac](../docs/configs.md)
-- [sa](../docs/sa.md)
-- [secrets](../docs/secrets.md)
+- [configs](../../docs/configs.md)
+- [rbac](../../docs/configs.md)
+- [sa](../../docs/sa.md)
+- [secrets](../../docs/secrets.md)

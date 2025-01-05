@@ -16,8 +16,10 @@ metadata:
   name: {{ include "name" $ }}-{{ .name }}
   namespace: {{ include "ns" $ }}
 type: Opaque
-stringData:
-  {{- toYaml .data | nindent 2 }}
+data:
+{{- range $k, $v := .data }}
+  {{ $k }}: {{ $v | b64enc }}
+{{- end }}
 ---
 {{- end }}
 {{- end }}
