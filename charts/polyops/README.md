@@ -42,7 +42,7 @@ secrets:
 
 ## Configuration
 
-- [configs](../../docs/configs.md)
-- [rbac](../../docs/configs.md)
-- [sa](../../docs/sa.md)
-- [secrets](../../docs/secrets.md)
+- [configs](../../docs/polyops/configs.md)
+- [rbac](../../docs/polyops/configs.md)
+- [sa](../../docs/polyops/sa.md)
+- [secrets](../../docs/polyops/secrets.md)
