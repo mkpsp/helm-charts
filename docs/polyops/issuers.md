@@ -7,7 +7,6 @@
 issuers:
 - name: 
   email:
-  selfsigned:
   http:
     ingress:
   aws:
@@ -22,7 +21,7 @@ issuers:
 issuers:
 - name: an arbitrary name
   email: the email that used with LetsEncrypt
-  selfsigned: set to "enabled" to create a selfsigned certificate
+  # if neither http nor aws is defined, a selfsigned certificate will be created
   http:
     ingress: set to an IngressClass to create a certificate using an HTTP challenge
   aws:
