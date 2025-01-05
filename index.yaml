@@ -99,6 +99,22 @@ entries:
     version: v1.0.0
   polyops:
   - apiVersion: v2
+    appVersion: v1.1.0
+    created: "2025-01-05T03:59:33.743801036Z"
+    description: Polyops, a versatile chart for deploying various ops resources to
+      Kubernetes
+    digest: fd1f241dd20a660ac7309bd8fa46ba4d680ccdde53e62a5cbcf489b29d8bf628
+    home: https://www.mkpsp.com
+    keywords:
+    - versatile
+    - generic
+    name: polyops
+    sources:
+    - https://github.com/mkpsp/helm-charts
+    urls:
+    - https://github.com/mkpsp/helm-charts/releases/download/polyops-v1.1.0/polyops-v1.1.0.tgz
+    version: v1.1.0
+  - apiVersion: v2
     appVersion: v1.0.2
     created: "2025-01-05T03:33:47.56975353Z"
     description: Polyops, a versatile chart for deploying various ops resources to
@@ -146,4 +162,4 @@ entries:
     urls:
     - https://github.com/mkpsp/helm-charts/releases/download/polyops-v1.0.0/polyops-v1.0.0.tgz
     version: v1.0.0
-generated: "2025-01-05T03:33:47.569792584Z"
+generated: "2025-01-05T03:59:33.743872741Z"
