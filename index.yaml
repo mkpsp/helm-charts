@@ -81,4 +81,21 @@ entries:
     urls:
     - https://github.com/mkpsp/helm-charts/releases/download/polyapp-v1.0.0/polyapp-v1.0.0.tgz
     version: v1.0.0
-generated: "2024-12-26T04:24:52.119546441Z"
+  polyops:
+  - apiVersion: v2
+    appVersion: v1.0.0
+    created: "2025-01-05T02:54:01.247594185Z"
+    description: Polyops, a versatile chart for deploying various ops resources to
+      Kubernetes
+    digest: 7a9f2589c26ee0735f83421954a7401e7b13f728d629a16869fc5a32387232de
+    home: https://www.mkpsp.com
+    keywords:
+    - versatile
+    - generic
+    name: polyops
+    sources:
+    - https://github.com/mkpsp/helm-charts
+    urls:
+    - https://github.com/mkpsp/helm-charts/releases/download/polyops-v1.0.0/polyops-v1.0.0.tgz
+    version: v1.0.0
+generated: "2025-01-05T02:54:01.247630082Z"
