@@ -1,6 +1,6 @@
 
 {{- define "name" }}
-{{- printf "%s" .Values.default.name | trunc 63 | trimSuffix "-" -}}
+{{- printf "%s" .Release.Name | trunc 63 | trimSuffix "-" -}}
 {{- end }}
 
 {{- define "ns" }}

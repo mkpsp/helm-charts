@@ -1,7 +1,4 @@
 
-default:
-  name: example
-
 configs:
 - name: env
   data:

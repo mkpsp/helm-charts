@@ -22,7 +22,7 @@ if [[ -n "$1" ]]; then
   #   --namespace helmspace \
   #   --values values.yml --validate --debug
 
-  helm upgrade ${1} ../../charts/polyops  \
+  helm upgrade $(printf "$1" | sed 's/\./-/g') ../../charts/polyops  \
     --namespace helmspace \
     --values values.yml \
     --dry-run --install;
@@ -39,7 +39,7 @@ else
     #   --namespace helmspace \
     #   --values values.yml --validate --debug
     
-    helm upgrade ${filename%%.*} ../../charts/polyops  \
+    helm upgrade $(printf "$filename" | sed 's/\./-/g') ../../charts/polyops  \
       --namespace helmspace \
       --values values.yml \
       --dry-run --install;

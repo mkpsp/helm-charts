@@ -2,9 +2,7 @@
   "$schema": "https://json-schema.org/draft-07/schema#",
   "title": "Polyops Schema",
   "description": "polyops validation",
-  "required": [
-    "default"
-  ],
+  "required": [],
   "properties": {
     "configs": {
       "type": "array",
@@ -18,17 +16,6 @@
         },
         "data": {
           "type": "object"
-        }
-      }
-    },
-    "default": {
-      "type": "object",
-      "required": [
-        "name"
-      ],
-      "properties": {
-        "name": {
-          "type": "string"
         }
       }
     },
