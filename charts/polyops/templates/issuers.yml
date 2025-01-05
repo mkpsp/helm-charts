@@ -38,14 +38,14 @@ spec:
           region: {{ .aws.region }}
           accessKeyID: {{ .aws.access_key }}
           secretAccessKeySecretRef:
-            name: {{ include "name" $ }}-{{ .name }}-aws
+            name: {{ include "name" $ }}-{{ .name }}
             key: aws-secret-access-key
 ---
 apiVersion: v1
 kind: Secret
 type: Opaque
 metadata:
-  name: {{ include "name" $ }}-{{ .name }}-aws
+  name: {{ include "name" $ }}-{{ .name }}
   namespace: {{ include "ns" $ }}
 data:
   aws-secret-access-key: {{ .aws.secret_key | b64enc }}

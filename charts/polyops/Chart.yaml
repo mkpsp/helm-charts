@@ -1,7 +1,7 @@
 apiVersion: v2
 name: polyops
-version: v1.1.0
-appVersion: v1.1.0
+version: v1.1.1
+appVersion: v1.1.1
 description: Polyops, a versatile chart for deploying various ops resources to Kubernetes
 home: https://www.mkpsp.com
 keywords:
