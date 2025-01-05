@@ -1,4 +1,11 @@
 
+prefix: "disable"
+
+sa:
+- name: test
+- name: example
+  automount: disable
+
 configs:
 - name: env
   data:
@@ -6,11 +13,14 @@ configs:
     TOKEN: "xyz"
 
 rbac:
-- rules:
+- name: local
+  rules:
   - apiGroups: [""]
     resources: ["pods"]
     verbs: ["get"]
-- type: cluster
+- name: global
+  type: cluster
+  sa: test
   rules:
   - apiGroups: [""]
     resources: ["pods"]
@@ -25,10 +35,10 @@ secrets:
 issuers:
 - name: selfsigned
   type: cluster
-  selfsigned: enable
 - name: http
   email: test@example.com
-  ingress: internal
+  http:
+    ingress: internal
 - name: aws
   type: cluster
   email: test@example.com

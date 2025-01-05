@@ -1,10 +1,10 @@
-{{- if not (eq .Values.sa "disable") }}
+{{- range .Values.sa }}
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: {{ include "name" $ }}
+  name: {{ include "name" (list $ .name) }}
   namespace: {{ include "ns" $ }}
-{{- if not .Values.rbac }}
+{{- if eq .automount "disable" }}
 automountServiceAccountToken: false
 {{- end }}
 ---

@@ -3,7 +3,7 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: {{ include "name" $ }}
+  name: {{ include "name" (list $ .name) }}
   namespace: {{ include "ns" $ }}
 rules:
 {{ toYaml .rules }}
@@ -11,22 +11,26 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: {{ include "name" $ }}
+  name: {{ include "name" (list $ .name) }}
   namespace: {{ include "ns" $ }}
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: {{ include "name" $ }}
+  name: {{ include "name" (list $ .name) }}
 subjects:
 - kind: ServiceAccount
-  name: {{ include "name" $ }}
+  {{- if .sa }}
+  name: {{ .sa }}
+  {{- else }}
+  name: {{ include "name" (list $ .name) }}
+  {{- end }}
   namespace: {{ include "ns" $ }}
 ---
 {{- else }}
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
-  name: {{ include "name" $ }}
+  name: {{ include "name" (list $ .name) }}
   namespace: {{ include "ns" $ }}
 rules:
 {{ toYaml .rules }}
@@ -34,15 +38,27 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
-  name: {{ include "name" $ }}
+  name: {{ include "name" (list $ .name) }}
   namespace: {{ include "ns" $ }}
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
-  name: {{ include "name" $ }}
+  name: {{ include "name" (list $ .name) }}
 subjects:
 - kind: ServiceAccount
-  name: {{ include "name" $ }}
+  {{- if .sa }}
+  name: {{ .sa }}
+  {{- else }}
+  name: {{ include "name" (list $ .name) }}
+  {{- end }}
+  namespace: {{ include "ns" $ }}
+---
+{{- end }}
+{{- if not .sa }}
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: {{ include "name" (list $ .name) }}
   namespace: {{ include "ns" $ }}
 ---
 {{- end }}

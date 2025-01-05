@@ -1,14 +1,18 @@
 
-### service account
+### global
 
 ```yaml
 # default settings
 
 sa:
+- name:
+  automount:
 ```
 
 ```yaml
 # explanations
 
-sa: set to "disable" so a service account is not made, otherwise, it is always made
+sa: 
+- name: an arbitary name
+  automount: set to "disable" to not automount service tokens
 ```

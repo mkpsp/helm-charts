@@ -5,7 +5,8 @@
 # default settings
 
 rbac:
-- type: 
+- name:
+  type: 
   rules:
 ```
 
@@ -13,6 +14,7 @@ rbac:
 # explanations
 
 rbac:
-- type: defaults to creating Role and Rolebinding. set to "cluster" to create ClusterRole and ClusterRoleBinding
+- name: an arbitrary name for naming resources
+  type: defaults to creating Role and Rolebinding. set to "cluster" to create ClusterRole and ClusterRoleBinding
   rules: list of rbac rules
 ```

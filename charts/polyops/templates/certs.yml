@@ -2,10 +2,10 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: {{ include "name" $ }}-{{ .name }}
+  name: {{ include "name" (list $ .name) }}
   namespace: {{ include "ns" $ }}
 spec:
-  secretName: {{ include "name" $ }}-{{ .name }}-cert
+  secretName: {{ include "name" (list $ .name) }}-cert
   {{- if .annotations }}
   secretTemplate:
     annotations:

@@ -3,24 +3,21 @@
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
 metadata:
-  name: {{ include "name" $ }}-{{ .name }}
+  name: {{ include "name" (list $ .name) }}
 {{- else }}
 apiVersion: cert-manager.io/v1
 kind: Issuer
 metadata:
-  name: {{ include "name" $ }}-{{ .name }}
+  name: {{ include "name" (list $ .name) }}
   namespace: {{ include "ns" $ }}
 {{- end }}
 spec:
-{{- if eq .selfsigned "enable" }}
-  selfSigned: {}
----
-{{- else if .http }}
+{{- if .http }}
   acme:
     server: https://acme-v02.api.letsencrypt.org/directory
     email: {{ .email }}
     privateKeySecretRef:
-      name: {{ include "name" $ }}-{{ .name }}
+      name: {{ include "name" (list $ .name) }}
     solvers:
     - http01:
         ingress:
@@ -31,24 +28,27 @@ spec:
     server: https://acme-v02.api.letsencrypt.org/directory
     email: {{ .email }}
     privateKeySecretRef:
-      name: {{ include "name" $ }}-{{ .name }}
+      name: {{ include "name" (list $ .name) }}
     solvers:
     - dns01:
         route53:
           region: {{ .aws.region }}
           accessKeyID: {{ .aws.access_key }}
           secretAccessKeySecretRef:
-            name: {{ include "name" $ }}-{{ .name }}
+            name: {{ include "name" (list $ .name) }}
             key: aws-secret-access-key
 ---
 apiVersion: v1
 kind: Secret
 type: Opaque
 metadata:
-  name: {{ include "name" $ }}-{{ .name }}
+  name: {{ include "name" (list $ .name) }}
   namespace: {{ include "ns" $ }}
 data:
   aws-secret-access-key: {{ .aws.secret_key | b64enc }}
+---
+{{- else }}
+  selfSigned: {}
 ---
 {{- end }}
 {{- end }}

@@ -1,8 +1,8 @@
 
 ###########################################################################
 
-Name: {{ include "name" $ }}
-Namespace: {{ include "ns" $ }}
+Name: {{ .Release.Name }}
+Namespace: {{ .Release.Namespace }}
 
 Chart Version: {{ .Chart.Version }}
 

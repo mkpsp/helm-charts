@@ -19,6 +19,9 @@
         }
       }
     },
+    "prefix": {
+      "type": "string"
+    },
     "rbac": {
       "type": "array",
       "required": [
@@ -34,7 +37,18 @@
       }
     },
     "sa": {
-      "type": "string"
+      "type": "array",
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "automount": {
+          "type": "string"
+        }
+      }
     },
     "secrets": {
       "type": "array",
