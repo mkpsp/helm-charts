@@ -42,6 +42,8 @@ issuers:
 
 certs:
 - name: wildcard
+  annotations:
+    test: annotate
   issuer: 
     name: aws
     type: cluster

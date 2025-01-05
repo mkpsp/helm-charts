@@ -6,6 +6,11 @@ metadata:
   namespace: {{ include "ns" $ }}
 spec:
   secretName: {{ include "name" $ }}-{{ .name }}-cert
+  {{- if .annotations }}
+  secretTemplate:
+    annotations:
+      {{- toYaml .annotations | nindent 6 }}
+  {{- end }}
   duration: 8760h
   renewBefore: 720h
   issuerRef:

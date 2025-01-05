@@ -9,6 +9,7 @@ certs:
   issuer:
     name:
     type:
+  annotations:
   urls:
 ```
 
@@ -20,5 +21,6 @@ certs:
   issuer:
     name: name of the cert-manager issuer to use
     type: set to "cluster" for a ClusterIssuer, otherwise, it looks for an Issuer
+  annotations: map of annotations to add to the secret containing the certificate
   urls: an array of domains to create the certificate for
 ```
