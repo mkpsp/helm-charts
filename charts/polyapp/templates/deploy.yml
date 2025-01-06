@@ -128,6 +128,16 @@ spec:
             {{- end }}
           {{- end }}
         {{- end }}
+        {{- if $volumes }}
+        volumeMounts:
+          {{- range $volumes }}
+          - name: {{ .name }}
+            mountPath: {{ .path }}{{- if .file }}/{{ .file }}{{- end }}
+            {{- if .file }}
+            subPath: {{ .file }}
+            {{- end }}
+          {{- end }}
+        {{- end }}
       {{- end }}
       {{- end }}
       containers:
