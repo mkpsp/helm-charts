@@ -106,6 +106,9 @@ spec:
         {{- if .root }}
           runAsUser: 0
         {{- end }}
+        {{- if .fsGroup }}
+          fsGroup: {{ .fsGroup }}
+        {{- end }}
           privileged: {{ ternary "true" "false" (.privileged | default false) }}
         {{- if $variables }}
         envFrom:
@@ -209,11 +212,6 @@ spec:
           runAsUser: 0
         {{- end }}
           privileged: {{ ternary "true" "false" (.privileged | default false) }}
-        env:
-          - name: DD_AGENT_HOST
-            valueFrom:
-              fieldRef:
-                fieldPath: status.hostIP
         {{- if or $variables }}
         envFrom:
           {{- range $variables }}
