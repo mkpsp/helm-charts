@@ -17,7 +17,7 @@ spec:
     server: https://acme-v02.api.letsencrypt.org/directory
     email: {{ .email }}
     privateKeySecretRef:
-      name: {{ include "name" (list $ .name) }}
+      name: {{ include "name" (list $ .name) }}-key
     solvers:
     - http01:
         ingress:
@@ -28,7 +28,7 @@ spec:
     server: https://acme-v02.api.letsencrypt.org/directory
     email: {{ .email }}
     privateKeySecretRef:
-      name: {{ include "name" (list $ .name) }}
+      name: {{ include "name" (list $ .name) }}-key
     solvers:
     - dns01:
         route53:
